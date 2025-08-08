@@ -1,0 +1,199 @@
+body {
+    background: linear-gradient(135deg, #72cfde 0%, #aa6bde 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background: rgba(64, 68, 73, 0.95);
+    padding: 2rem 2.5rem;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(67,198,172,0.18);
+    width: 100%;
+    max-width: 420px;
+    border: 2px solid #acc643;
+}
+
+h1 {
+    text-align: center;
+    color: #c7e858;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.input-group {
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+    align-items: center; /* Ensures vertical alignment */
+}
+
+#task-input,
+#due-date-input,
+#add-task-btn {
+    height: 2.8rem; /* Make all elements the same height */
+    box-sizing: border-box;
+}
+
+#add-task-btn {
+    margin-left: 0; /* Remove extra margin if it pushes the button out */
+    border-radius: 8px;
+    padding: 0 1.2rem;
+    display: flex;
+    align-items: center;
+    height: 2.8rem; /* Ensure same height as inputs */
+    box-shadow: none; /* Remove if any shadow pushes it out */
+}
+
+#task-input:focus {
+    border: 2px solid #43c6ac;
+    outline: none;
+}
+
+#add-task-btn {
+    padding: 0.75rem 1.2rem;
+    background: linear-gradient(90deg, #f7971e 0%, #ffd200 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(247,151,30,0.08);
+    transition: background 0.2s, color 0.2s;
+}
+#add-task-btn:hover {
+    background: linear-gradient(90deg, #ffd200 0%, #f7971e 100%);
+    color: #266381;
+}
+
+#task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 0.5rem;
+    border-bottom: 1px solid #f0f0f0;
+    opacity: 1;
+    transition: opacity 0.4s, background 0.3s;
+    background: linear-gradient(90deg, #f8ffae 0%, #1a4940 100%);
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 2px 8px rgba(67,198,172,0.08);
+}
+.task-item.completed {
+    background: linear-gradient(90deg, #e0eafc 0%, #cfdef3 100%);
+}
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    color: #aaa;
+    opacity: 0.7;
+}
+.task-item.overdue {
+    background: linear-gradient(90deg, #ffdde1 0%, #dacfd1 100%);
+    animation: overduePulse 1s infinite alternate;
+}
+@keyframes overduePulse {
+    from { box-shadow: 0 0 0 0 #e2bd94; }
+    to { box-shadow: 0 0 12px 2px #eed09c; }
+}
+
+#task-count {
+    text-align: right;
+    color: #f7971e;
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.task-text {
+    flex: 1;
+    font-size: 1rem;
+    color: #444;
+}
+
+.task-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.edit-btn, .delete-btn {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+    font-weight: 600;
+}
+.edit-btn {
+    color: #21584d;
+}
+.edit-btn:hover {
+    background: #e0eafc;
+    color: #f7971e;
+}
+.delete-btn {
+    color: #f7971e;
+}
+.delete-btn:hover {
+    background: #fffbe7;
+    color: #d90429;
+}
+
+.edit-input {
+    flex: 1;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 2px solid #43c6ac;
+    border-radius: 6px;
+    margin-right: 0.5rem;
+    background: #e0eafc;
+    color: #175649;
+}
+
+.checkbox {
+    margin-right: 0.8rem;
+    accent-color: #f7971e;
+    width: 1.1em;
+    height: 1.1em;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+    box-shadow: 0 0 0 2px #ffd20033;
+}
+.checkbox:checked {
+    box-shadow: 0 0 0 2px #43c6ac66;
+}
+#due-date-input {
+    padding: 0.75rem;
+    border: 2px solid #f8ffae;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #fffbe7;
+    color: #1c6873;
+    transition: border 0.2s;
+    width: 8.5em;
+}
+#due-date-input:focus {
+    border: 2px solid #43c6ac;
+    outline: none;
+}
+.due-date {
+    font-size: 0.95em;
+    color: #163c34;
+    margin-left: 0.5em;
+    font-weight: 500;
+} 
